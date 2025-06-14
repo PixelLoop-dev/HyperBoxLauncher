@@ -1,4 +1,16 @@
-export function LoginScene ({ setScene }) {
+let Api = null;
+
+function LoginScene ({ setScene }) {
+
+  window.addEventListener('pywebviewready', () => {
+    Api = window.pywebview.api;
+  });
+
+  // async function Login() {
+  //   const w = await Api.print('123')
+    
+  //   w && setScene('main')
+  // }
 
   return (
     <main className='auth-LoginScene'>

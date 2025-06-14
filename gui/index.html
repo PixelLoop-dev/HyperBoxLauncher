@@ -8,14 +8,23 @@
   <script src="libs/react-dom.development.js" crossorigin></script>
   <script src="libs/babel.min.js"></script>
 
-  <script src="libs/three.min.js"></script>
-  <script src="libs/vanta.fog.min.js"></script>
-
   <link rel="stylesheet" href="src/General.css">
 </head>
 <body>
   <div id="background"></div>
+
+  <header class="pywebview-drag-region">
+    <div class="window-title">HyperBox Launcher</div>
+    <div class="action-buttons">
+      <div id="window-minimize">-</div>
+      <div id="window-close">⨯</div>
+    </div>
+  </header>
+
   <div id="root"></div>
+
+  <script src="libs/three.min.js"></script>
+  <script src="libs/vanta.fog.min.js"></script>
 
   <script src="src/Background.js"></script>
 

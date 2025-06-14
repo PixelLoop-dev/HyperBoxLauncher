@@ -2,6 +2,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 const { useState } = React;
 
 function App () {
+  const [scene, setScene] = useState("login");
 
   
   window.addEventListener('pywebviewready', () => {
@@ -12,25 +13,16 @@ function App () {
   });
 
 
-  const [scene, setScene] = useState("login");
-
   return (
-  <>
-    <header className="pywebview-drag-region">
-      <div className="window-title">HyperBox Launcher</div>
-      <div className="action-buttons">
-        <div id="window-minimize">-</div>
-        <div id="window-close">⨯</div>
-      </div>
-    </header>
+    <>
+      {scene === "login" && <LoginScene setScene={setScene} />}
+      {scene === "register" && <RegisterScene setScene={setScene} />}
+      {scene === "main" && <MainScene />}
 
-    {scene === "login" && <LoginScene setScene={setScene} />}
-    {scene === "register" && <RegisterScene setScene={setScene} />}
-    {/* {scene === "main" && <MainScene setScene={setScene} />} */}
-
-    {/* {scene === "loading" && <LoadingScene />} */}
-  </>
-)}
+      {/* {scene === "loading" && <LoadingScene />} */}
+    </>
+  )
+}
 
 
 root.render( <App /> );
