@@ -1,11 +1,11 @@
 import webview
 import time
 
-import Auth
-import Play
-import FilesManage
+import src.Auth as Auth
+import src.Play as Play
+import src.FilesManage as FilesManage
 
-from _config_ import _config_
+from src._config_ import _config_
 
 
 class Api():
