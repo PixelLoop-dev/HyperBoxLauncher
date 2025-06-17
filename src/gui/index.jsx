@@ -4,7 +4,6 @@ const { useState } = React;
 function App () {
   const [scene, setScene] = useState("login");
 
-  
   window.addEventListener('pywebviewready', () => {
   // Управление окном
     document.getElementById("window-close").onclick = () => window.pywebview.api.close();

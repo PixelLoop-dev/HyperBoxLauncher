@@ -1,12 +1,7 @@
 import webview
 import time
 
-import src.Auth as Auth
-import src.Play as Play
-import src.FilesManage as FilesManage
-
-from src._config_ import _config_
-
+from Auth import Auth
 
 class Api():
   def close(self):
@@ -15,6 +10,12 @@ class Api():
   def minimize(self):
     window.minimize()
 
+
+  def TryToLogin(self, username, password):
+    return True
+
+  def TryToRegister(self, username, password, email):
+    return True
 
 if __name__ == '__main__':
   window = webview.create_window(

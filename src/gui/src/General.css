@@ -32,6 +32,10 @@ body {
   flex-direction: column;
 }
 
+*::selection {
+  background-color: rgba(255, 255, 255, 0.333);
+}
+
 #root {
   display: flex;
   flex-direction: column;
@@ -128,7 +132,16 @@ header, .action-buttons {
   backdrop-filter: blur(5px);
   width: 200px;
   font-family: var(--font);
-  transition: all 0.3s ease;
+
+  transition: opacity 0.3s ease;
+}
+
+.auth-input:focus {
+  border-width: 2px;
+}
+
+.auth-input::placeholder:focus {
+  opacity: 0.5;
 }
 
 .auth-input::placeholder {
@@ -142,15 +155,15 @@ header, .action-buttons {
   border-radius: 15px;
   padding: 5px;
   background-color: var(--main-color);
-  width: 200px;
+  width: 210px;
   font-family: var(--font);
   font-weight: bold;
   transition: all 0.3s ease;
 }
 
 .auth-input:hover,
-.button:hover {
-  transform: scale(1.02);
+.auth-button:hover {
+  opacity: 0.7;
 }
 
 .auth-swap-mode {
@@ -162,6 +175,13 @@ header, .action-buttons {
 .auth-swap-mode:hover {
   opacity: 0.8;
 }
+
+.warn {
+  color: red;
+  font-size: 10px;
+}
+
+
 
 
 
