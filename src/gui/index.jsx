@@ -2,7 +2,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 const { useState } = React;
 
 function App () {
-  const [scene, setScene] = useState("login");
+  const [scene, setScene] = useState("main");
 
   window.addEventListener('pywebviewready', () => {
   // Управление окном

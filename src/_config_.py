@@ -6,7 +6,9 @@ class _config_ ():
   load_dotenv()
 
   API = os.getenv("API")
-  VERSION = os.getenv("VERSION")
+  KEY = os.getenv("KEY")
+
+  PORT = os.getenv("server-port")
 
   # MAIN_DIR = os.environ.get('USERPROFILE') + '/AppData/Roaming/.HyperBox'
   MAIN_DIR = 'D:/HyperBox'
@@ -14,6 +16,12 @@ class _config_ ():
   CONFIG_FILE = f"{MAIN_DIR}/config.json"
   UPDATES_DIR = f"{MAIN_DIR}/updates"
   TEMP_DIR = os.environ['TEMP']
+
+  print("Host:", os.getenv("host"))
+  print("Port:", os.getenv("port"))
+  print("User:", os.getenv("user"))
+  print(os.getenv("password"), os.getenv("database"))
+  
 
   SQL = pymysql.connect(
     host = os.getenv("host"), 
