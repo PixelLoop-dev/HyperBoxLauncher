@@ -16,7 +16,7 @@ function App () {
     <>
       {scene === "login" && <LoginScene setScene={setScene} />}
       {scene === "register" && <RegisterScene setScene={setScene} />}
-      {scene === "main" && <MainScene />}
+      {scene === "main" && <MainScene ramQuantity={16} selectedRamQuantity={8} autoRamQuantity={false} gameDir={''}  />}
 
       {/* {scene === "loading" && <LoadingScene />} */}
     </>

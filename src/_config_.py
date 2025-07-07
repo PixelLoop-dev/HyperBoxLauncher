@@ -16,18 +16,3 @@ class _config_ ():
   CONFIG_FILE = f"{MAIN_DIR}/config.json"
   UPDATES_DIR = f"{MAIN_DIR}/updates"
   TEMP_DIR = os.environ['TEMP']
-
-  print("Host:", os.getenv("host"))
-  print("Port:", os.getenv("port"))
-  print("User:", os.getenv("user"))
-  print(os.getenv("password"), os.getenv("database"))
-  
-
-  SQL = pymysql.connect(
-    host = os.getenv("host"), 
-    port = int(os.getenv("port")), 
-    user = os.getenv("user"),
-    password = os.getenv("password"), 
-    database = os.getenv("database"),
-    cursorclass = pymysql.cursors.DictCursor
-  )

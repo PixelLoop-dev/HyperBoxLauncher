@@ -1,4 +1,4 @@
-export function RegisterScene ({ setScene }) {
+function RegisterScene ({ setScene }) {
 
   return (
     <main className="auth-RegisterScene">

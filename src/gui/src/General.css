@@ -79,6 +79,7 @@ header, .action-buttons {
 .action-buttons > div {
   transition: all 0.3s ease;
   font-size: 26px;
+  z-index: 9999;
 }
 
 .action-buttons > div:hover {
@@ -215,6 +216,8 @@ header, .action-buttons {
   flex-direction: row;
 
   flex: 1;
+
+  position: relative;
 }
 
 .main-modpacks-list {
@@ -240,6 +243,8 @@ header, .action-buttons {
 
   height: 55px;
   width: 180px;
+
+  transition: all 0.3s ease;
 }
 
 .modpack > img {
@@ -263,7 +268,7 @@ header, .action-buttons {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.main-settings {
+.main-settings-toggle {
   position: absolute;
 
   top: 25px;
@@ -312,13 +317,15 @@ header, .action-buttons {
 
   height: 35px;
   width: 170px;
+
+  transition: all 0.3s ease;
 }
 
 .main-play > img {
   height: 20px;
 }
 
-.main-folder, .main-settings {
+.main-folder, .main-settings-toggle {
   background-color: transparent;
   border-radius: 10px;
   border: 2px solid white;
@@ -329,9 +336,11 @@ header, .action-buttons {
 
   height: 35px;
   width: 35px;
+
+  transition: all 0.3s ease;
 }
 
-.main-folder > img, .main-settings > img {
+.main-folder > img, .main-settings-toggle > img {
   height: 20px
 }
 
@@ -346,7 +355,7 @@ header, .action-buttons {
 }
 
 .main-progress-bar {
-  border: 2px solid white;
+  border: 2px solid white;  
   border-radius: 15px;
 
   height: 5px;
@@ -356,12 +365,145 @@ header, .action-buttons {
 .main-auth {
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 10px;
   
   width: auto;
-  padding: 5px 30px;
+  min-width: 145px;
+  padding: 0px 25px;
+  height: 35px;
 
   border: 2px solid white;
   border-radius: 10px;
 
   margin-left: auto;
+
+  transition: all 0.3s ease;
+}
+
+.main-auth > label > img {
+  height: 25px;
+  width: 25px;
+  border-radius: 30px;
+
+  border: 0.5px solid black;
+  transition: all 0.3s ease;
+}
+
+.main-auth > span {
+  font-family: Nunito;
+  font-weight: bold;
+  padding-left: 10px;
+  border-left: 2px solid white;
+}
+
+.main-play:hover, .main-folder:hover, .main-settings-toggle:hover, .modpack:hover,
+.main-auth > label > img:hover {
+  opacity: 0.8;
+}
+
+.main-play:active, .main-folder:active, .main-settings-toggle:active, .modpack:active,
+.main-auth > label > img:active {
+  /* transform: scale(0.985); */
+  opacity: 0.5;
+}
+
+.blur {
+  position: fixed;
+  top: 0; bottom: 0; left: 0; right: 0;
+
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+
+.settings {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  z-index: 10;
+
+  margin: 50px;
+  margin-top: 10px;
+
+  padding: 15px;
+
+  background-color: rgb(0, 0, 0, 0.2);
+  border: 2px solid rgba(0, 0, 0, 0.505);
+  border-radius: 10px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.blur, .settings {display: none;}
+
+.settings-title {
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.settings-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  margin: 15px;
+  font-size: 28px;
+}
+
+.settings-ram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+}
+
+.ram-slider {
+  width: 60%;
+  height: 15px;
+  border-radius: 5px;
+  background: transparent;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.tick-labels {
+  width: 64%;
+  margin-left: 10px; /* <--- Кастыль ебаный */
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.tick-labels span {
+  font-family: 'Nunito';
+  white-space: nowrap;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.settings-ram > span {
+  font-family: 'Nunito';
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.settings-checkboxs {
+  display: flex;
+  width: 80%;
+  gap: 40px;
+  
+  margin-top: 30px;
+
+  justify-content: center;
+}
+
+.settings-checkboxs > span {
+  display: flex;
+  font-size: 18px;
+  align-items: center;
+  font-weight: 500;
 }
