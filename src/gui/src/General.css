@@ -5,7 +5,7 @@
  ##  ###  ######   ##  ##   ######    ##       #####     ##
   ##  ##  ##       ##  ##   ##        ##      ##  ##     ##
    #####   #####   ##  ##    #####   ####      #####    #### */
-
+  
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 :root {
@@ -101,7 +101,7 @@ header, .action-buttons {
  ##  ##    ######     ###   ###  ##
 */
 
-.auth-LoginScene, .auth-RegisterScene {
+.auth-LoginScene {
   flex: 1;
   display: flex;
   align-items: center;
@@ -114,8 +114,6 @@ header, .action-buttons {
   align-items: center;
   gap: 10px;
   margin-bottom: 30px;
-
-
 }
 
 .auth-logo {
@@ -146,7 +144,7 @@ header, .action-buttons {
   transition: opacity 0.3s ease;
 }
 
-.auth-input:focus {
+.auth-input:focus, .auth-input:active {
   border-width: 2px;
 }
 
@@ -165,7 +163,7 @@ header, .action-buttons {
   border-radius: 15px;
   padding: 5px;
   background-color: var(--main-color);
-  width: 210px;
+  width: 200px;
   font-family: var(--font);
   font-weight: bold;
   transition: all 0.3s ease;
@@ -206,10 +204,6 @@ header, .action-buttons {
 ##   ##  ##  ##     ##     ##  ##
 ##   ##   #####    ####    ##  ##
 */
-
-/* * {
-  border: 1px solid red;
-} */
 
 .MainScene {
   display: flex;

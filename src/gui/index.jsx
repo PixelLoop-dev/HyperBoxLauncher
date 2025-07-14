@@ -2,7 +2,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 const { useState } = React;
 
 function App () {
-  const [scene, setScene] = useState("main");
+  const [scene, setScene] = useState("login");
 
   window.addEventListener('pywebviewready', () => {
   // Управление окном
@@ -15,7 +15,6 @@ function App () {
   return (
     <>
       {scene === "login" && <LoginScene setScene={setScene} />}
-      {scene === "register" && <RegisterScene setScene={setScene} />}
       {scene === "main" && <MainScene ramQuantity={16} selectedRamQuantity={8} autoRamQuantity={false} gameDir={''}  />}
 
       {/* {scene === "loading" && <LoadingScene />} */}

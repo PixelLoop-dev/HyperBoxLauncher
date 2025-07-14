@@ -59,8 +59,6 @@ function LoginScene ({ setScene }) {
         <div className="warn" id="warn"></div>
 
         <button type="button" className="auth-button" id="auth-button" onClick={TryToLogin}>Войти</button>
-
-        <a className="auth-swap-mode" id="auth-to-register" onClick={() => setScene('register')}>Зарегистрироваться</a>
       </div>
     </main>
   );

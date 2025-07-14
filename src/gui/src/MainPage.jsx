@@ -13,7 +13,7 @@ function MainScene ({ ramQuantity, selectedRamQuantity, autoRamQuantity, gameDir
     setAutoRamQuantitY(!autoRamQuantitY)
 
     setRamValue(ramQuantity / 2)
-  }
+  };
 
   return (
     <main className="MainScene">
@@ -46,7 +46,6 @@ function MainScene ({ ramQuantity, selectedRamQuantity, autoRamQuantity, gameDir
             </label>
               <span>k4tsuro_</span>
           </div>
-
         </div>
 
         <div className="main-content-2">
